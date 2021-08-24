@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>XSS</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js"></script>
+</head>
+<body>
+<div class="message-container">
+  <label class="left first">
+    <input type="text" name="message" value="message">
+  </label>
+  <label class="right">
+    <input type="text" name="message" value="message">
+  </label>
+  <label class="left">
+    <input type="text" name="message" value="message">
+  </label>
+  <label class="right">
+    <input type="text" name="message" value="message">
+  </label>
+  <div class="message">
+    <form id="form" class="message" action="backend/index.php" method="GET">
+      <label>
+        <input type="text" id="message" name="message" placeholder="message">
+      </label>
+      <button id="button" onclick="sendForm()" type="button">
+        Send
+      </button>
+
+      <button id="button1" type="submit" value="submit">
+        Redirect
+      </button>
+      <button type="button" onclick="readUrl()">DOM</button>
+    </form>
+  </div>
+  <div id="dom">
+  </div>
+</div>
+</body>
+</html>
